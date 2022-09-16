@@ -1,0 +1,134 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === true" >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/addcourse']" routerLinkActive="router-link-active" >ADD COURSES</a>
+      <a mat-list-item [routerLink]="['/gc']" routerLinkActive="router-link-active" >GENTLEMAN CADETS </a>
+      <a mat-list-item [routerLink]="['/billing']" routerLinkActive="router-link-active" >BILLING</a>
+      <a mat-list-item [routerLink]="['/admin']" routerLinkActive="router-link-active" >ADMINISTRATOR</a>
+      <a mat-list-item [routerLink]="['/cda']" routerLinkActive="router-link-active" >CDA</a>
+      <a mat-list-item [routerLink]="['/bankreport']" routerLinkActive="router-link-active" >BANK REPORTS</a>
+      <a mat-list-item [routerLink]="['/reports']" routerLinkActive="router-link-active" >REPORTS</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+       >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button><div class="heading_nav">
+        <h3 >BILLING</h3>
+      </div>
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div class="card">
+      <div class="card-header">
+        <!---     buttons--><div class="col-12">
+
+          <button type="button" class="btn btn-dark" [routerLink]="['/billing']" routerLinkActive="router-link-active" >EXPENDITURE FORM</button>
+          <button type="button" class="btn btn-dark">ALL</button>
+          <button type="button" class="btn btn-dark">COPY</button>
+          <button type="button" class="btn btn-dark">ADVANCED FILTER</button>
+          <button type="button" class="btn btn-dark">DELETE</button>
+          <button type="button" class="btn btn-dark" [routerLink]="['/receipt']" routerLinkActive="router-link-active" >RECEIPT</button>
+          <button type="button" class="btn btn-dark">ALL</button>
+        </div>
+    <div>
+      RECEIPT FORM
+    </div>
+
+       </div>
+       <div class="card-body">
+
+            <form (ngSubmit)='onsubmit(Form)' #Form="ngForm">
+              <div class="form-group col-6">
+                <label for="recordNo">RECORD NO.</label>
+                <input class="form-control" type="text">
+              </div>
+
+            <div class="form-group col-6">
+
+              <label for="name">G.C NO.</label>
+              <select name="name" id="name">
+                <option value="A/">A/</option>
+                <option value="D/">D/</option>
+                <option value="T/">T/</option>
+                <option value="TES/">TES/</option>
+                <option value="SCO/">SCO/</option>
+                <option value="U/">U/</option>
+                <option value="N/">N/</option>
+                <option value="SR/">SR/</option>
+              </select>
+              <input type="text" class="form-control" ngModle name="gc No.">
+
+            </div>
+            <div class="form-group col-6">
+
+              <label for="name">NAME</label>
+              <input type="text" class="form-control" ngModle name="name">
+
+            </div>
+            <div class="form-group col-6">
+
+              <label for="name">BATTLION</label>
+              <input type="text" class="form-control" ngModle name="battlion">
+
+            </div>
+            <div class="form-group col-6">
+
+              <label for="name">COMPANY</label>
+              <input type="text" class="form-control" ngModle name="company">
+
+            </div>
+            <div class="form-group col-6">
+
+              <label for="name">DATE</label>
+              <input type="date" class="form-control" ngModle name="dateofjoining">
+
+            </div>
+            <div class="form-group col-6">
+
+              <label for="name">BILL NO / DETAILS</label>
+              <input type="text" class="form-control"ngModle name="course">
+
+            </div>
+            <div class="form-group col-6">
+
+              <label for="name">TYPE</label>
+              <input type="text" class="form-control" ngModle name="bankaccount">
+
+            </div>
+            <div class="form-group col-6">
+
+              <label for="name">ACCOUNT</label>
+              <input type="text" class="form-control" ngModle name="bankaccount">
+
+            </div>
+
+            <div class="form-group col-6">
+              <button class="btn btn-primary" type="button">Add</button>
+              <button [disabled]="!Form.valid" type="submit" class="btn btn-primary">SAVE</button>
+              <button type="reset" class="btn btn-primary">CANCEL</button>
+
+            </div>
+
+
+
+            </form>
+
+
+
+       </div>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

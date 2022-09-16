@@ -1,0 +1,34 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === true" >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/addcourse']" routerLinkActive="router-link-active" >ADD COURSES</a>
+      <a mat-list-item [routerLink]="['/gc']" routerLinkActive="router-link-active" >GENTLEMAN CADETS </a>
+      <a mat-list-item [routerLink]="['/billing']" routerLinkActive="router-link-active" >BILLING</a>
+      <a mat-list-item [routerLink]="['/admin']" routerLinkActive="router-link-active" >ADMINISTRATOR</a>
+      <a mat-list-item [routerLink]="['/cda']" routerLinkActive="router-link-active" >CDA</a>
+      <a mat-list-item [routerLink]="['/bankreport']" routerLinkActive="router-link-active" >BANK REPORTS</a>
+      <a mat-list-item [routerLink]="['/reports']" routerLinkActive="router-link-active" >REPORTS</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+       >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button><div class="heading_nav">
+        <h3 >BANK REPORTS</h3>
+      </div>
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
