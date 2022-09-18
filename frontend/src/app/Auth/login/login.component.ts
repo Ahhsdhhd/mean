@@ -35,8 +35,6 @@ export class LoginComponent implements OnInit {
   (res:any)=>{
 
     alert("login succ")
-  },err =>{
-    alert("server error")
   }
 
 
